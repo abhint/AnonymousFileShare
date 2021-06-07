@@ -1,12 +1,22 @@
-const { Telegraf, Markup } = require("telegraf");
+const { Telegraf } = require("telegraf");
 
 bot = new Telegraf("1351501215:AAG8lVdSM3EZxnzGouODCTRHuOKM_3wbWpQ");
 
+const keyboard = {
+  inline_keyboard: [
+    [{ text: "DOWNLOAD URL", url: "https://gofile.io/d/8OHYCJ" }],
+    [{ text: "🗂 SOURCE", url: "https://github.com/AbhijithNT/" }],
+  ],
+};
+
 bot.start((msg) => {
-  msg.telegram.sendMessage(msg.chat.id, "HI");
+  msg.telegram.sendMessage(msg.chat.id, "<b>HI</b>", {
+    parse_mode: "HTML",
+    reply_markup: keyboard,
+  });
 });
 
-bot.on("message", (msg) => {
+bot.on("text", (msg) => {
   if (msg.message.reply_markup) {
     msg.telegram.sendMessage(msg.chat.id, msg.message.text);
     msg.telegram.sendMessage(msg.chat.id, msg.message.text, {
@@ -32,7 +42,12 @@ bot.on("photo", (msg) => {
 });
 
 bot.on("document", (msg) => {
-  bot.telegram.sendDocument(msg.chat.id, msg.message.document.file_id);
+  bot.telegram.sendDocument(msg.chat.id, msg.message.document.file_id)
+  bot.telegram.sendDocument(msg.chat.id, msg.message.document.file_id, {
+    caption: msg.message.caption,
+    caption_entities: msg.message.entities,
+    reply_markup: msg.message.reply_markup,
+  });
 });
 
 bot.on("audio", (msg) => {
