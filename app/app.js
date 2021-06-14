@@ -1,5 +1,6 @@
 import { Telegraf } from "telegraf";
 import dotenv from "dotenv";
+import text from "./message.js";
 dotenv.config();
 
 if (process.env.BOT_TOKEN === undefined) {
@@ -8,21 +9,6 @@ if (process.env.BOT_TOKEN === undefined) {
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-const start_keyboard = {
-  parse_mode: "HTML",
-  reply_markup: {
-    inline_keyboard: [
-      [{ text: "Developer", url: "https://t.me/thankappan369" }],
-      [
-        {
-          text: "Source",
-          url: "https://github.com/AbhijithNT/AnonymousFileShare/",
-        },
-      ],
-    ],
-  },
-};
-
 const option = {
   parse_mode: "HTML",
 };
@@ -30,8 +16,23 @@ const option = {
 bot.start((msg) => {
   msg.telegram.sendMessage(
     msg.chat.id,
-    `Hi <b>${msg.message.from.username}</b> !`,
-    start_keyboard
+    `Hi <b>${msg.message.from.first_name.replace(/[<>/]/g, "")} !</b>${
+      text.start
+    }`,
+    {
+      parse_mode: "HTML",
+      reply_markup: {
+        inline_keyboard: [
+          [{ text: "Developer", url: "https://t.me/thankappan369" }],
+          [
+            {
+              text: "Source",
+              url: "https://github.com/AbhijithNT/AnonymousFileShare/",
+            },
+          ],
+        ],
+      },
+    }
   );
 });
 
@@ -96,6 +97,10 @@ bot.on("location", (msg) => {
     msg.message.location.latitude,
     msg.message.location.longitude
   );
+});
+
+bot.on("sticker", (msg) => {
+  bot.telegram.sendSticker(msg.chat.id, msg.message.sticker.file_id);
 });
 
 bot.launch({
