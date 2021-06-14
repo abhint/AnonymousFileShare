@@ -12,8 +12,13 @@ const start_keyboard = {
   parse_mode: "HTML",
   reply_markup: {
     inline_keyboard: [
-      [{ text: "", url: "https://gofile.io/d/8OHYCJ" }],
-      [{ text: "🗂 SOURCE", url: "https://github.com/AbhijithNT/" }],
+      [{ text: "Developer", url: "https://t.me/thankappan369" }],
+      [
+        {
+          text: "Source",
+          url: "https://github.com/AbhijithNT/AnonymousFileShare/",
+        },
+      ],
     ],
   },
 };
@@ -23,7 +28,11 @@ const option = {
 };
 
 bot.start((msg) => {
-  msg.telegram.sendMessage(msg.chat.id, "<b>HI</b>", start_keyboard);
+  msg.telegram.sendMessage(
+    msg.chat.id,
+    `Hi <b>${msg.message.from.username}</b> !`,
+    start_keyboard
+  );
 });
 
 bot.command("ping", async (msg) => {
