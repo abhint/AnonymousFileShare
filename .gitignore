@@ -1,16 +1,6 @@
-# Dependency directory
+#node modules
 node_modules
-
-# Optional npm cache directory
-.npm
-
-# Logs
-logs
-*.log
-npm-debug.log*
-
-# cache
-.cache
-
 #env
 .env
+#Others
+js
