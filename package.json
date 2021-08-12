@@ -4,8 +4,12 @@
   "description": "This is simple bot it is use for send Anonymous file maker",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "nodemon app.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "watch-node": "nodemon dist/app.js",
+    "watch-ts": "tsc -w",
+    "deploy": "git add . && git commit -m Heroku && git push heroku master"
   },
   "repository": {
     "type": "git",
