@@ -47,8 +47,20 @@ $ npm run start
 $ npm run test
 ```
 
-#### Heroku deploy
+#### Heroku deploy command
 
 ```sh
 $ npm run deploy
 ```
+
+## Heroku Deploy
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/AbhijithNT/AnonymousFileShare/)
+
+
+## :clap:  Supporters
+
+### Stargazers
+[![Stargazers repo roster for @AbhijithNT/AnonymousFileShare](https://reporoster.com/stars/AbhijithNT/AnonymousFileShare)](https://github.com/AbhijithNT/AnonymousFileShare/stargazers)
+### Forkers
+[![Forkers repo roster for @AbhijithNT/AnonymousFileShare](https://reporoster.com/forks/AbhijithNT/AnonymousFileShare)](https://github.com/AbhijithNT/AnonymousFileShare/network/members)
