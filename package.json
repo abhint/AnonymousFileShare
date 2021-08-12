@@ -1,21 +1,37 @@
 {
   "name": "anonymousfileshare",
-  "version": "1.4.1",
-  "description": "",
-  "main": "hello.js",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "This is simple bot it is use for send Anonymous file maker",
+  "main": "app.js",
   "scripts": {
-    "start": "node app/app.js",
-    "test": "nodemon app/app.js",
+    "start": "node app.js",
+    "test": "nodemon app.ts",
+    "build": "tsc",
+    "watch-node": "nodemon dist/app.js",
+    "watch-ts": "tsc -w",
     "deploy": "git add . && git commit -m Heroku && git push heroku master"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbhijithNT/AnonymousFileShare.git"
+  },
+  "keywords": [
+    "telegram",
+    "bot"
+  ],
   "author": "Abhijith N T",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AbhijithNT/AnonymousFileShare/issues"
+  },
+  "homepage": "https://github.com/AbhijithNT/AnonymousFileShare#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.2.0",
+    "typescript": "^4.3.5"
+  },
   "dependencies": {
     "dotenv": "^10.0.0",
-    "telegraf": "^4.3.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.7"
+    "telegraf": "^4.4.1"
   }
 }
