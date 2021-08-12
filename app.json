@@ -1,0 +1,21 @@
+{
+  "name": "Anonymous File Share",
+  "description": "This bot help to share Anonymous",
+  "repository": "https://github.com/AbhijithNT/AnonymousFileShare",
+  "keywords": ["telegram", "nodejs", "telegram bot", "telegraf"],
+  "env": {
+    "URL": {
+      "description": "Heroku app name",
+      "value": "https://<app name>.herokuapp.com"
+    },
+    "BOT_TOKEN": {
+      "description": "Your Bot token from @Botfather",
+      "value": ""
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
