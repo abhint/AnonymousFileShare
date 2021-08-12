@@ -24,3 +24,27 @@ export const onPhoto = Composer.on("photo", async (msg) => {
     msg.message.photo[msg.message.photo.length - 1].file_id
   );
 });
+
+export const onDocument = Composer.on("document", async (msg) => {
+  await msg.telegram.sendDocument(msg.chat.id, msg.message.document.file_id);
+});
+
+export const onAudio = Composer.on("audio", async (msg) => {
+  await msg.telegram.sendAudio(msg.chat.id, msg.message.audio.file_id);
+});
+
+export const onVoice = Composer.on("voice", async (msg) => {
+  await msg.telegram.sendVoice(msg.chat.id, msg.message.voice.file_id);
+});
+
+export const onLocation = Composer.on("location", async (msg) => {
+  await msg.telegram.sendLocation(
+    msg.chat.id,
+    msg.message.location.latitude,
+    msg.message.location.longitude
+  );
+});
+
+export const onSticker = Composer.on("sticker", async (msg) => {
+  await msg.telegram.sendSticker(msg.chat.id, msg.message.sticker.file_id);
+});
