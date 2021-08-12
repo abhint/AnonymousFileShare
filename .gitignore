@@ -17,3 +17,8 @@ npm-debug.log*
 
 #..
 js
+#js files
+*.js
+
+#vscode
+.vscode
