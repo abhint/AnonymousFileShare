@@ -3,12 +3,7 @@
   "description": "...........",
   "repository": "https://github.com/AbhijithNT/AnonymousFileShare",
   "keywords": ["telegram", "nodejs", "telegram bot" , "anonymous"],
-  "logo": "https://github.com/AbhijithNT/AnonymousFileShare",
   "env": {
-    "ENV": {
-      "description": "Set it to anything to enable configuration by environment variables.",
-      "value": "True"
-    },
     "BOT_TOKEN": {
       "description": "Your Bot token from @Botfather",
       "value": ""
