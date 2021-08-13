@@ -13,6 +13,7 @@ dotenv.config();
       port: Number(process.env.PORT),
     },
   });
+  console.log("^_^ Bot Started");
 })();
 
 process.once("SIGINT", async () => bot.stop("SIGINT"));
