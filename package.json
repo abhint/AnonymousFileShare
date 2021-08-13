@@ -1,6 +1,10 @@
 {
   "name": "anonymousfileshare",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.6.1",
+    "npm": "7.20.3"
+  },
   "description": "This is simple bot it is use for send Anonymous file maker",
   "scripts": {
     "start": "node app.js",
