@@ -1,8 +1,26 @@
 {
-  "name": "Node.js Sample",
-  "description": "A barebones Node.js app using Express",
-  "repository": "https://github.com/heroku/node-js-getting-started",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
-  "keywords": ["node", "express", "static"]
+  "name": "anonymous file share",
+  "description": "...........",
+  "repository": "https://github.com/AbhijithNT/AnonymousFileShare",
+  "keywords": ["telegram", "nodejs", "telegram bot" , "anonymous"],
+  "logo": "https://github.com/AbhijithNT/AnonymousFileShare",
+  "env": {
+    "ENV": {
+      "description": "Set it to anything to enable configuration by environment variables.",
+      "value": "True"
+    },
+    "BOT_TOKEN": {
+      "description": "Your Bot token from @Botfather",
+      "value": ""
+    },
+    "URL": {
+      "description": "Your heroku app url ",
+      "value": "https://<your app name>.herokuapp.com"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
 }
-
