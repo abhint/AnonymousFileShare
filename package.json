@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/AbhijithNT/AnonymousFileShare#readme",
   "devDependencies": {
+    "@types/node": "^16.6.1",
     "nodemon": "^2.0.12",
     "ts-node": "^10.2.0",
     "typescript": "^4.3.5"
