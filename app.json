@@ -1,8 +1,21 @@
 {
-  "name": "Node.js Sample",
-  "description": "A barebones Node.js app using Express",
-  "repository": "https://github.com/heroku/node-js-getting-started",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
-  "keywords": ["node", "express", "static"]
+  "name": "Anonymous file share",
+  "description": "This is simple bot it is use for send Anonymous file maker",
+  "repository": "https://github.com/AbhijithNT/AnonymousFileShare",
+  "keywords": ["telegram", "nodejs", "telegram bot" , "anonymous"],
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Your Bot token from @Botfather",
+      "value": ""
+    },
+    "URL": {
+      "description": "Your heroku app url ",
+      "value": "https://<your app name>.herokuapp.com"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
 }
-
