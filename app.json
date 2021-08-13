@@ -1,6 +1,6 @@
 {
-  "name": "anonymous file share",
-  "description": "...........",
+  "name": "Anonymous file share",
+  "description": "This is simple bot it is use for send Anonymous file maker",
   "repository": "https://github.com/AbhijithNT/AnonymousFileShare",
   "keywords": ["telegram", "nodejs", "telegram bot" , "anonymous"],
   "env": {
