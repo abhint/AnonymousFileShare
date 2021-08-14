@@ -1,6 +1,6 @@
 import { Composer } from "telegraf";
 import { onText } from "./messages";
-const onStart_ = Composer.command("start", async (msg) => {
+export const onStart = Composer.command("start", async (msg) => {
   msg.telegram.sendMessage(
     msg.chat.id,
     `Hi <b>${msg.message.from.first_name.replace(/[<>/]/g, "")} !</b>${
@@ -22,5 +22,3 @@ const onStart_ = Composer.command("start", async (msg) => {
     }
   );
 });
-
-export const onStart = Composer.privateChat(onStart_)

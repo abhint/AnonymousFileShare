@@ -9,14 +9,15 @@ import {
   onSticker,
   onVoice,
 } from "./main";
+import { Composer } from "telegraf";
 
 export const onMain = () => {
-  bot.use(onText);
-  bot.use(onPhoto);
-  bot.use(onVideo);
-  bot.use(onDocument);
-  bot.use(onAudio);
-  bot.use(onLocation);
-  bot.use(onSticker);
-  bot.use(onVoice);
+  bot.use(Composer.privateChat(onText));
+  bot.use(Composer.privateChat(onPhoto));
+  bot.use(Composer.privateChat(onVideo));
+  bot.use(Composer.privateChat(onDocument));
+  bot.use(Composer.privateChat(onAudio));
+  bot.use(Composer.privateChat(onLocation));
+  bot.use(Composer.privateChat(onSticker));
+  bot.use(Composer.privateChat(onVoice));
 };
