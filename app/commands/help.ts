@@ -1,5 +1,6 @@
 import { Composer } from "telegraf";
+import { onText } from "./messages";
 
 export const onHelp = Composer.command("help", async (msg) => {
-  msg.reply("@thankappan369");
+  msg.telegram.sendMessage(msg.chat.id,`${onText.help}`);
 });
