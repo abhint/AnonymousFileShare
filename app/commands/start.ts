@@ -10,7 +10,7 @@ export const onStart = Composer.command("start", async (msg) => {
       parse_mode: "HTML",
       reply_markup: {
         inline_keyboard: [
-          [{ text: "Developer", url: "https://t.me/thankappan369" }],
+          [{ text: "Developer", url: "tg://user?id=429320566" }],
           [
             {
               text: "Source",
