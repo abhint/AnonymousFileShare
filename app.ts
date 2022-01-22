@@ -13,7 +13,9 @@ dotenv.config();
       port: Number(process.env.PORT),
     },
   });
-  console.log("^_^ Bot Started");
+  console.log(
+    `${bot.botInfo.first_name} is Online! 🚀 \nURL: ${process.env.URL}\nPORT: ${process.env.PORT}`
+  );
 })();
 
 process.once("SIGINT", async () => bot.stop("SIGINT"));
