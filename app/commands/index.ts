@@ -5,7 +5,5 @@ import { onPing } from "./ping";
 import { Composer } from "telegraf";
 
 export const onCommands = async () => {
-  bot.use(Composer.privateChat(onStart));
-  bot.use(Composer.privateChat(onHelp));
-  bot.use(Composer.privateChat(onPing));
+  bot.use(Composer.privateChat(onStart, onHelp, onPing));
 };
