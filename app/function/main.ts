@@ -1,6 +1,7 @@
 import { Composer } from "telegraf";
+import bot from "../bot";
 
-export const onText = Composer.on("text", async (msg) => {
+const onText = Composer.on("text", async (msg) => {
   if (msg.message.reply_markup) {
     await msg.telegram.sendMessage(msg.chat.id, msg.message.text);
     await msg.telegram.sendMessage(msg.chat.id, msg.message.text, {
@@ -14,30 +15,30 @@ export const onText = Composer.on("text", async (msg) => {
   }
 });
 
-export const onVideo = Composer.on("video", async (msg) => {
+const onVideo = Composer.on("video", async (msg) => {
   await msg.telegram.sendVideo(msg.chat.id, msg.message.video.file_id);
 });
 
-export const onPhoto = Composer.on("photo", async (msg) => {
+const onPhoto = Composer.on("photo", async (msg) => {
   await msg.telegram.sendPhoto(
     msg.chat.id,
     msg.message.photo[msg.message.photo.length - 1].file_id
   );
 });
 
-export const onDocument = Composer.on("document", async (msg) => {
+const onDocument = Composer.on("document", async (msg) => {
   await msg.telegram.sendDocument(msg.chat.id, msg.message.document.file_id);
 });
 
-export const onAudio = Composer.on("audio", async (msg) => {
+const onAudio = Composer.on("audio", async (msg) => {
   await msg.telegram.sendAudio(msg.chat.id, msg.message.audio.file_id);
 });
 
-export const onVoice = Composer.on("voice", async (msg) => {
+const onVoice = Composer.on("voice", async (msg) => {
   await msg.telegram.sendVoice(msg.chat.id, msg.message.voice.file_id);
 });
 
-export const onLocation = Composer.on("location", async (msg) => {
+const onLocation = Composer.on("location", async (msg) => {
   await msg.telegram.sendLocation(
     msg.chat.id,
     msg.message.location.latitude,
@@ -45,6 +46,23 @@ export const onLocation = Composer.on("location", async (msg) => {
   );
 });
 
-export const onSticker = Composer.on("sticker", async (msg) => {
+const onSticker = Composer.on("sticker", async (msg) => {
   await msg.telegram.sendSticker(msg.chat.id, msg.message.sticker.file_id);
 });
+
+const core_function = async () => {
+  bot.use(
+    Composer.privateChat(
+      onText,
+      onPhoto,
+      onDocument,
+      onVideo,
+      onAudio,
+      onLocation,
+      onSticker,
+      onVoice
+    )
+  );
+};
+
+export default core_function;
