@@ -1,21 +1,30 @@
 import bot from "./app/bot";
 import * as dotenv from "dotenv";
-import { onCommands } from "./app/commands/index";
-import { onMain } from "./app/function/index";
+import botUse from "./app/index";
 dotenv.config();
 
 (async () => {
-  onCommands();
-  onMain();
-  await bot.launch({
-    webhook: {
-      domain: String(process.env.URL),
-      port: Number(process.env.PORT),
-    },
-  });
-  console.log(
-    `${bot.botInfo.first_name} is Online! 🚀 \nURL: ${process.env.URL}\nPORT: ${process.env.PORT}`
-  );
+  await botUse();
+  if (process.env.WEBHOOK_URL && process.env.PORT) {
+    const webhook_url = String(process.env.WEBHOOK_URL);
+    const port = Number(process.env.PORT);
+    await bot
+      .launch({
+        webhook: {
+          domain: webhook_url,
+          port: port,
+        },
+      })
+      .then(() =>
+        console.log(
+          `${bot.botInfo.first_name} is Online! 🚀 \nURL: ${webhook_url}\nPORT: ${port}`
+        )
+      );
+  } else {
+    bot
+      .launch()
+      .then(() => console.log(`${bot.botInfo.first_name} is Online! 🚀`));
+  }
 })();
 
 process.once("SIGINT", async () => bot.stop("SIGINT"));
